@@ -1,5 +1,7 @@
 package capitulo01.bloque01;
 
+import javax.swing.JOptionPane;
+
 public class Bloque01Ejercicio01 {
 
 	public static void main (String args[]) {
@@ -7,14 +9,16 @@ public class Bloque01Ejercicio01 {
 		float numFlotante; // Declaración de una variable real o flotante
 		double numDouble; // Declaración de una variable flotante larga
 		
-		numEntero = (int) 4.5; // Asignación de un valor a una variable
-		numFlotante = (float) 4.5; // Casting de valor double a float
-		numDouble = 4.8; // Asignación de valor double a variable double
+		String str = JOptionPane.showInputDialog("Introduce un número entero");
+		numEntero = Integer.parseInt(str);
+		str = JOptionPane.showInputDialog("Introduce un número flotante");
+		numFlotante = Float.parseFloat(str);
+		str = JOptionPane.showInputDialog("Introduce un número double");
+		numDouble = Double.parseDouble(str);
 		
-		// Impresión en la consola de salida de las variabless
-		System.out.println("El valor de la variable numEntero es: " + numEntero + 
-				"\nEl valor de la variable numFlotante es: " + numFlotante +
-				"\nEl valor de la variable numDouble es: " + numDouble);
+		System.out.println("El número entero es: " + numEntero +
+				"\nEl número flotante es: " + numFlotante + 
+				"\nEl número doble es: " + numDouble);
 	
 	}
 	
