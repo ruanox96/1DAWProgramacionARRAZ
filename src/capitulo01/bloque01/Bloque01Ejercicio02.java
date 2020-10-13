@@ -26,6 +26,11 @@ public class Bloque01Ejercicio02 {
 			System.out.println("Uso de toUpper: " + cadenaCarac.toUpperCase());
 			
 			esto es una prueba de los cambios
+			ll
+			ll
+			ll
+			ll
+			l
 		}
 	}
 
