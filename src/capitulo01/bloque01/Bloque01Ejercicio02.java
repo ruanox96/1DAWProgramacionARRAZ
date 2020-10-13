@@ -24,6 +24,8 @@ public class Bloque01Ejercicio02 {
 			System.out.println("Uso de subcadenas: " + cadenaCarac.substring(12, 20));
 			System.out.println("Uso de toLower: " + cadenaCarac.toLowerCase());
 			System.out.println("Uso de toUpper: " + cadenaCarac.toUpperCase());
+			
+			esto es una prueba de los cambios
 		}
 	}
 
