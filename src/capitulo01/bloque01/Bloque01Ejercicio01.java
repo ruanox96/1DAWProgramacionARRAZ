@@ -19,7 +19,7 @@ public class Bloque01Ejercicio01 {
 		System.out.println("El número entero es: " + numEntero +
 				"\nEl número flotante es: " + numFlotante + 
 				"\nEl número doble es: " + numDouble);
-	
+
 	}
 	
 
