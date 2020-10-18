@@ -5,6 +5,10 @@ import javax.swing.JOptionPane;
 public class Bloque01Ejercicio02 {
 
 	public static void main(String[] args) {
+		
+		/*
+		 * Repetir el ejercicio anterior para mostrar el número menor de los dos introducidos .
+		 */
 		String str = JOptionPane.showInputDialog("Introduce un número");
 		int num1 = Integer.parseInt(str);
 		

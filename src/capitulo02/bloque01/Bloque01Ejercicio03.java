@@ -5,6 +5,10 @@ import javax.swing.JOptionPane;
 public class Bloque01Ejercicio03 {
 
 	public static void main(String[] args) {
+		/*
+		 *  Repetir el ejercicio 1º de este bloque de ejercicios, pero pidiendo al usuario cinco variables.
+		 *  Es decir, se pedirán al usuario cinco variables y se mostrará el mayor valor en pantalla.
+		 */
 		String str = JOptionPane.showInputDialog("Introduce un número");
 		int num1 = Integer.parseInt(str);
 		str = JOptionPane.showInputDialog("Introduce un número");
