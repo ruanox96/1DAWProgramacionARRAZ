@@ -1,5 +1,7 @@
 package capitulo02.bloque01;
 
+import javax.swing.JOptionPane;
+
 public class Bloque01Ejercicio06 {
 
 	public static void main(String[] args) {
@@ -8,6 +10,17 @@ public class Bloque01Ejercicio06 {
 		 *Recuerda que un número par es aquel cuyo resto de su división entre dos sea siempre cero,
 		 *y recuerda que un número impar es aquel cuyo resto de su división entre dos sea siempre uno.
 		 */
+		
+		String str = JOptionPane.showInputDialog("Introduce un número para ver si es par o impar");
+		int num1 = Integer.parseInt(str);
+		
+		if (num1 %2 == 0) {
+			System.out.println("El numero introducido es par");
+		} else {
+			System.out.println("El numero introducido no es par");
+		} 
+			
+		
 
 	}
 
