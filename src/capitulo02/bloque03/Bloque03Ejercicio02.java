@@ -6,6 +6,23 @@ public class Bloque03Ejercicio02 {
 
 	public static void main(String[] args) throws InterruptedException {
 		// Creamos el menu con las opciones disponibles
+		
+		//REcogemos el numero de opcion introducia por el usuario
+				
+				float num1;
+				float num2;
+				float area;
+				float radio;
+				float hipo;
+				float perimetro;
+				float base;
+				float altura;
+				int opc;
+				String str;
+		
+		do {
+			do {
+				
 		System.out.println("1. Cálculo de la hipotenusa de un triángulo.");
 		System.out.println("2. Cálculo de la superficie de una circunferencia.");
 		System.out.println("3. Cálculo del perímetro de una circunferencia.");
@@ -13,19 +30,9 @@ public class Bloque03Ejercicio02 {
 		System.out.println("5. Cálculo del área de un triángulo.");
 		System.out.println("0. Salir de la aplicación.");
 		System.out.println("                        ");
-		//REcogemos el numero de opcion introducia por el usuario
-		String str = JOptionPane.showInputDialog("Escribe una opción");
-		int opc = Integer.parseInt(str);
-		float num1;
-		float num2;
-		float area;
-		float radio;
-		float hipo;
-		float perimetro;
-		float base;
-		float altura;
-		
-		
+		str = JOptionPane.showInputDialog("Escribe una opción");
+		opc = Integer.parseInt(str);
+			} while (opc < 0 || opc > 5);
 		switch(opc) {
 		case 1:
 			str = JOptionPane.showInputDialog("Escribe el primer cateto");
@@ -83,7 +90,7 @@ public class Bloque03Ejercicio02 {
 			System.out.println("Has introducido el 0, saliendo del programa :)");
 			break;
 		}
-
+		while (opc != 0);
 	}
 
-}
+}}
