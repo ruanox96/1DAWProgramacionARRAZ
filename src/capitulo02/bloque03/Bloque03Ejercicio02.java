@@ -90,7 +90,8 @@ public class Bloque03Ejercicio02 {
 			System.out.println("Has introducido el 0, saliendo del programa :)");
 			break;
 		}
+		}
 		while (opc != 0);
-	}
+	
 
 }}
