@@ -11,7 +11,7 @@ public class Bloque03Ejercicio03 {
 		 *   potencias y el módulo de la división.
 		 */
 		
-		double num, potencia, raiz, modulo, indice, divisor, resudivi;
+		double num, potencia, raiz, indice, divisor, resudivi;
 		
 		String str = JOptionPane.showInputDialog("Escribe un numero para calcular la raiz, su potencia y su modulo");
 		num = Integer.parseInt(str);
