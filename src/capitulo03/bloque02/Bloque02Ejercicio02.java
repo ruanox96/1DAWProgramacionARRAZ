@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class Bloque02Ejercicio02 {
 
 	public static void main(String[] args) {
-int i, num = 0, suma=0, cont, mayor=0, menor=0;
+		int i, num = 0, cont, mayor=0, menor=0;
 		
 		String str = JOptionPane.showInputDialog("Escribe el numero de numeros que quieres introducir");
 		cont = Integer.parseInt(str);// Este contador se utiliza para controlar el numero de iteraciones del bucle
