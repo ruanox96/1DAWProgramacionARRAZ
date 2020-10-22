@@ -9,21 +9,24 @@ public class Bloque03Ejercicio06 {
 		 * Realiza un ejercicio que pida números al usuario, hasta que uno de ellos sea 0 (cero).
 		 *  Para cada número introducido se debe mostrar en pantalla su tabla de multiplicar, desde el 0 (cero) hasta el 10.
 		 */
-		int num=0, multi=0, i;
+		int num=0, positivos=0, negativos=0;
 		
 		do{   // Vas a ejecutar las instrucciones del bucle al menos una vez.
-			String str = JOptionPane.showInputDialog("Escribe numeros para ver cual es el mayor(0 para terminar)");
+			String str = JOptionPane.showInputDialog("Escribe numeros para ver cuantos negativos y cuantos positivos hay");
 			num = Integer.parseInt(str);
 			
-			for (i=0; i<=10; i++) {
-				if (num == 0) {
+			if(num > 0) {
+				positivos++;
+			}
+			if (num == 0) {
 					break;
 				}
-				multi=num*i;
-				System.out.println(multi);
+			if (num < 0) {
+				negativos++;
 			}
-			
+				
 		}while (num!=0);
+		System.out.println("El número de negativos es: " + negativos + " y el numero de positivos es: " + positivos);
 		
 	}
 
