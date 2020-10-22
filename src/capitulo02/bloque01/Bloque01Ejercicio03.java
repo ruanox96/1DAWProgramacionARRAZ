@@ -9,7 +9,8 @@ public class Bloque01Ejercicio03 {
 		 *  Repetir el ejercicio 1º de este bloque de ejercicios, pero pidiendo al usuario cinco variables.
 		 *  Es decir, se pedirán al usuario cinco variables y se mostrará el mayor valor en pantalla.
 		 */
-		String str = JOptionPane.showInputDialog("Introduce un número");
+		String str;
+		str = JOptionPane.showInputDialog("Introduce un número");
 		int num1 = Integer.parseInt(str);
 		str = JOptionPane.showInputDialog("Introduce un número");
 		int num2 = Integer.parseInt(str);
