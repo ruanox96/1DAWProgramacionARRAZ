@@ -12,13 +12,16 @@ public class Bloque03Ejercicio06 {
 		int num=0, i, cont=0;
 		
 		do{   // Vas a ejecutar las instrucciones del bucle al menos una vez.
-			String str = JOptionPane.showInputDialog("Escribe numeros para ver cuantos negativos y cuantos positivos hay");
+			String str = JOptionPane.showInputDialog("Escribe un numero para ver su tabla de multiplicar");
 			num = Integer.parseInt(str);
-			for(i=0; i<=num;i++) {
-				
+			for(i=0; i<=10;i++) {
+				System.out.println(num*cont);
+				cont++;
+			if (num ==0) {
+				break;
+			}
 			}
 		}while (num!=0);
-		System.out.println("El número de negativos es: " + cont + " y el numero de positivos es: " + cont);
 		
 	}
 
