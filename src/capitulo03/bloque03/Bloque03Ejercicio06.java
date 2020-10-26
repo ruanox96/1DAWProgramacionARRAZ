@@ -15,11 +15,10 @@ public class Bloque03Ejercicio06 {
 			String str = JOptionPane.showInputDialog("Escribe un numero para ver su tabla de multiplicar");
 			num = Integer.parseInt(str);
 			for(i=0; i<=10;i++) {
-				System.out.println(num*cont);
-				cont++;
+				System.out.println(num*i);
 			if (num ==0) {
 				break;
-			}
+				}
 			}
 		}while (num!=0);
 		
