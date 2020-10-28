@@ -14,11 +14,11 @@ public class Bloque03Ejercicio06 {
 		do{   // Vas a ejecutar las instrucciones del bucle al menos una vez.
 			String str = JOptionPane.showInputDialog("Escribe un numero para ver su tabla de multiplicar");
 			num = Integer.parseInt(str);
-			for(i=0; i<=10;i++) {
+			for(i=0; i<=10&&(num!=0);i++) {
 				System.out.println(num*i);
-			if (num ==0) {
+			/*if () {
 				break;
-				}
+				}*/
 			}
 		}while (num!=0);
 		
