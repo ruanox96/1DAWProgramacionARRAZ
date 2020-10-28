@@ -7,11 +7,11 @@ public class Bloque01Ejercicio01 {
 	}
 
 	public static void main(String[] args) {
-		int numeros[] = new int[obtenerNumeroAzar ()];
+		int numeros[] = new int[5];
 		
 		for (int i = 0; i < numeros.length; i++) {
 			numeros[i] = i + 1;
-			System.out.print(numeros[i] + " ");
+			System.out.print(numeros[(int) Math.random () * 100] + " ");
 		}
 
 	}
