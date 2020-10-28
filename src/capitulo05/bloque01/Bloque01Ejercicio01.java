@@ -36,6 +36,7 @@ public class Bloque01Ejercicio01 {
 		System.out.println("La suma es " + suma);
 		System.out.println("El mayor es " + mayor);
 		System.out.println("El menor es " + menor);
+		System.out.println("El menor es " + menor);
 	}
 
 }
