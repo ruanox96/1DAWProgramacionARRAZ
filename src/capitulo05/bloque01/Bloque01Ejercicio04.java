@@ -1,0 +1,38 @@
+package capitulo05.bloque01;
+
+import javax.swing.JOptionPane;
+
+public class Bloque01Ejercicio04 {
+
+	public static void main(String[] args) {
+		/*
+		 *Realiza un ejercicio que inicialice un array de 150 elementos enteros al azar entre 0 y 100.
+		 *A continuación pedirás al usuario un valor y buscarás dicho valor en el array. Si lo encuentras,
+		 *debes indicar al usuario la posición del array en que se encuenta. En caso de que no encuentres el valor buscado,
+		 *debes indicárselo también al usuario.
+		 */
+		int numeros[] = new int[150];
+		int numcomparar, posicion=0;
+		int i;
+		String str = JOptionPane.showInputDialog("Escribe un numero para ver si esta en el array y la posición");
+		numcomparar = Integer.parseInt(str);
+		for (i=0; i < numeros.length; i++ ) {
+			//Con esto asignamos un numero aleatorio en cada posicion del array
+			numeros[i] = (int) Math.round(Math.random() * 100);
+			//Comprobamos el numero que hay en cada posición del for 
+			System.out.print(numeros[i] + " ");
+			
+			posicion++;
+			if (numcomparar == numeros[i]) {
+				System.out.println(" ");
+				System.out.println("La posición es: " + posicion);
+			}
+			
+		}
+		
+		
+		
+
+	}
+
+}
