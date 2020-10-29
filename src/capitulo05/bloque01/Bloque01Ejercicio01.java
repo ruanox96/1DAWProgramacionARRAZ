@@ -7,7 +7,7 @@ public class Bloque01Ejercicio01 {
 	}
 
 	public static void main(String[] args) {
-		/*
+		/**
 		 * Realiza un ejercicio que inicialice un array de 150 elementos enteros al azar entre 0 y 100.
 		 * Debes mostrar el array en pantalla y obtener la suma, la media, el menor y el mayor de todos los números que aparecen en el array.
 		 */
