@@ -1,5 +1,9 @@
 package capitulo05.bloque01;
 
+import javax.swing.JOptionPane;
+
+import utils.Utils;
+
 public class Bloque01Ejercicio02 {
 
 	public static void main(String[] args) {
@@ -9,9 +13,17 @@ public class Bloque01Ejercicio02 {
 		 */
 		
 		int numeros[] = new int[150];
+		int numsuperior, numinferior;
+		
+		String str = JOptionPane.showInputDialog("Introduce el limite superior");
+		numsuperior = Integer.parseInt(str);
+		str = JOptionPane.showInputDialog("Introduce el limite inferior");
+		numinferior = Integer.parseInt(str);
+		
+		
 		for (int i=0; i < numeros.length; i++ ) {
 			//Con esto asignamos un numero aleatorio en cada posicion del array
-			numeros[i] = (int) Math.round(Math.random() * 100);
+			numeros[i] = Utils.obtenerNumeroAzar(numinferior, numsuperior);
 			//Comprobamos el numero que hay en cada posición del for 
 			System.out.print(numeros[i] + " ");
 		}

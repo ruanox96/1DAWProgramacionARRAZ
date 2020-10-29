@@ -25,10 +25,16 @@ public class Bloque01Ejercicio04 {
 			posicion++;
 			if (numcomparar == numeros[i]) {
 				System.out.println(" ");
-				System.out.println("La posición es: " + posicion);
+				System.out.println("He econtrado el numero que has introducido y su posición es: " + posicion);
+			}
+			if (posicion == numeros.length && numeros[i] != numcomparar) {
+				System.out.println(" ");
+				System.out.println("Lo sentimos su numero no estaba en este array :(");
 			}
 			
 		}
+			
+		
 		
 		
 		
