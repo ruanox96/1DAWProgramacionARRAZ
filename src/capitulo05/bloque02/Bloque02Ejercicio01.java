@@ -21,7 +21,7 @@ public class Bloque02Ejercicio01 {
 			}
 			System.out.println("El array cambiado es: " + numeros[i] + " ");
 			
-			
+			System.out.println();
 		}
 
 	}
