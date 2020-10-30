@@ -14,6 +14,7 @@ public class Bloque01Ejercicio04 {
 		int numeros[] = new int[150];
 		int numcomparar, posicion=0;
 		int i;
+		boolean encontrado=false;
 		String str = JOptionPane.showInputDialog("Escribe un numero para ver si esta en el array y la posición");
 		numcomparar = Integer.parseInt(str);
 		for (i=0; i < numeros.length; i++ ) {
@@ -21,24 +22,20 @@ public class Bloque01Ejercicio04 {
 			numeros[i] = (int) Math.round(Math.random() * 100);
 			//Comprobamos el numero que hay en cada posición del for 
 			System.out.print(numeros[i] + " ");
-			
 			posicion++;
 			if (numcomparar == numeros[i]) {
-				System.out.println(" ");
-				System.out.println("He econtrado el numero que has introducido y su posición es: " + posicion);
+				encontrado=true;
+				break;
 			}
-			if (posicion == numeros.length && numeros[i] != numcomparar) {
-				System.out.println(" ");
-				System.out.println("Lo sentimos su numero no estaba en este array :(");
-			}
-			
 		}
+		if(encontrado == true) {
+			System.out.println(" ");
+			System.out.println("He econtrado el numero que has introducido y su posición es: " + posicion);
+		} else {
+			System.out.println(" ");
+			System.out.println("Lo sentimos su numero no estaba en este array :( ");
+		}
+		
 			
-		
-		
-		
-		
-
 	}
-
 }
