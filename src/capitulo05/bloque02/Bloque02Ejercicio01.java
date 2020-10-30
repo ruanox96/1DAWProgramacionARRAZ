@@ -20,8 +20,6 @@ public class Bloque02Ejercicio01 {
 				numeros[i] = (numeros[i] * -1);
 			}
 			System.out.println("El array cambiado es: " + numeros[i] + " ");
-			
-			System.out.println();
 		}
 
 	}
