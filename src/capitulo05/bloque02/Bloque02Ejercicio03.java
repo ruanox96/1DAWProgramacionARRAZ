@@ -7,9 +7,9 @@ import utils.Utils;
 public class Bloque02Ejercicio03 {
 
 	public static void main(String[] args) {
-		int numeros1[] = new int[5];
+		int numeros1[] = new int[150];
 		int num;
-		String str = JOptionPane.showInputDialog("Escribe numeros para ver cual es el mayor(0 para terminar)");
+		String str = JOptionPane.showInputDialog("Introduce un numero para multiplicarlo por el array");
 		num = Integer.parseInt(str);
 		
 		for (int i=0; i<numeros1.length; i++) {

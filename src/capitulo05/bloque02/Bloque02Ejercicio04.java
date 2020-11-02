@@ -8,28 +8,24 @@ public class Bloque02Ejercicio04 {
 		int numeros[] = new int[5];
 		
 		for (int i=0; i < numeros.length; i++) {
-			
 			numeros[i]=Utils.obtenerNumeroAzar();
 			System.out.print(" " + numeros[i] );
 		}
-		
-		int primero = numeros[0];
+		//Guardamos el ultimo antes de sobreescribirlo
+		int primero = numeros[numeros.length-1];
 		System.out.println(" ");
 		
-		for(int i=0; i < numeros.length-1; i++ ) {
-			numeros[i]=numeros[i+1];
-			
+		//desplazamos todo una posicion a la derecha dejando la posicion 0 vacia
+		for(int i=numeros.length-1; i > 0 ; i-- ) {
+			numeros[i]=numeros[i-1];
 		}
+		//el ultimo lo pasamos a la posicion 0
+		numeros[0]=primero;
 		
-
-		numeros[4]=primero;
 		for (int i=0; i < numeros.length; i++) {
 			System.out.print(" " + numeros[i]);
 		}
 		
-	
-		
-
 	}
 
 }
