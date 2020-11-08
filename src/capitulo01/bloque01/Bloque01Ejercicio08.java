@@ -13,8 +13,5 @@ public class Bloque01Ejercicio08 {
 		} else {
 			System.out.println("EL numero es par");
 		}
-	
-
 	}
-
 }
