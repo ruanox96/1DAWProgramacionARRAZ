@@ -85,7 +85,7 @@ public class combinar {
 	public static void recursividad (int num0) {
 		if (num0 <= 100) {
 			System.out.print(num0 + " ");
-			recursividad(num0 +1);
+			recursividad(num0 +2);
 		}
 	}
 
