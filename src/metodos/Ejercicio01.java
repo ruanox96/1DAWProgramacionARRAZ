@@ -40,6 +40,14 @@ public class Ejercicio01 {
 	 * El valor devuelto debe ser flotante. El método "main" debe llamar a este otro método,
 	 * con valores inventados por ti, e imprimir el valor de la media en la consola de salida.
 	 */
+	/**
+	 * 
+	 * @param n1
+	 * @param n2
+	 * @param n3
+	 * @param n4
+	 * @return
+	 */
 	public static float media (int n1, int n2, int n3, float n4) {
 		float resultado = (n1 + n2 + n3 + n4)/4;
 		return resultado;
@@ -51,6 +59,11 @@ public class Ejercicio01 {
 	 * el número introducido por el usuario y, si dicho número no está entre el valor mínimo y
 	 * el máximo que se ha indicado, seguirá pidiendo números al usuario hasta que se obtenga uno válido.
 	 * Finalmente se debe devolver dicho valor del usuario al método main, que lo imprimirá en la consola.
+	 */
+	
+	/**
+	 * 
+	 * @return
 	 */
 	public static int valormaximoyminimo () {
 		String str = JOptionPane.showInputDialog("Introduce el limite máximo");
@@ -67,6 +80,10 @@ public class Ejercicio01 {
 		 
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public static int maximo () {
 		String str = JOptionPane.showInputDialog("Introduce un numero para ver si es mayor que el siguiente");
 		int num1 = Integer.parseInt(str);
@@ -84,6 +101,10 @@ public class Ejercicio01 {
 		
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public static int numeroImparEntreLimites () {
 		int num;
 		num = Utils.obtenerNumeroAzar(1, 100);
@@ -93,6 +114,22 @@ public class Ejercicio01 {
 		return num;
 	}
 	
+	public static String traduceNumero (int num) {
+		switch (num) {
+		case 0:
+			return "cero";
+		case 1:
+			return "uno";	
+		}
+		return null;
+	}
+	
+	/**
+	 * 
+	 * @param num1
+	 * @param num2
+	 * @param num3
+	 */
 	public static void imprimeMinimoAMaximo(int num1, int num2, int num3) {
 		
 		int a[] = new int [] {num1, num2, num3};
@@ -114,6 +151,10 @@ public class Ejercicio01 {
 		
 	}
 	
+	/**
+	 * 
+	 * @param longitud
+	 */
 	public static void fibonacci(int longitud) {
 		int numeros[] = new int[longitud]; // Declaro el array
 		
@@ -132,12 +173,22 @@ public class Ejercicio01 {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param array
+	 */
 	public static void imprimeArray(int array[]) {
 		for (int i = 0; i < array.length; i++) {
 			System.out.print(array[i] + " ");
 			}
 	}
 	
+	/**
+	 * 
+	 * @param array
+	 * @param primerindice
+	 * @param segundoindice
+	 */
 	public static void recorte(int array[], int primerindice, int segundoindice) {
 		int nuevoarray[] = new int [segundoindice - primerindice+1];
 		for (int i=0; i<nuevoarray.length; i++) {
@@ -147,6 +198,11 @@ public class Ejercicio01 {
 				System.out.print(nuevoarray[i] + " ");
 				}
 		}
+	
+	/**
+	 * 
+	 * @param num0
+	 */
 	public static void recursividad (int num0) {
 		if (num0 <= 100) {
 			System.out.print(num0 + " ");
