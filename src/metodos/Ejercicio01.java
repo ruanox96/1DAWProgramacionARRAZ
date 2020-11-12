@@ -114,14 +114,14 @@ public class Ejercicio01 {
 		return num;
 	}
 	
+	/**
+	 * 
+	 * @param num
+	 * @return
+	 */
 	public static String traduceNumero (int num) {
-		switch (num) {
-		case 0:
-			return "cero";
-		case 1:
-			return "uno";	
-		}
-		return null;
+		String array[] = new String [] {"cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez"};
+		return array[num];
 	}
 	
 	/**
