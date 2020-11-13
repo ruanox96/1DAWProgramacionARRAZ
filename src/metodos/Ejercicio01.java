@@ -24,6 +24,7 @@ public class Ejercicio01 {
 		}
 		imprimeArray(array);
 		*/
+		
 		/*
 		int array[] = new int[] {1,2,3,4,5,6,7,8};
 		recorte(array, 4, 6);
