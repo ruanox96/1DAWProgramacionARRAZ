@@ -27,7 +27,11 @@ La entrega a esta tarea se debe hacer oblligatoriamente entregando la dirección
 			System.out.print(array[i] + " ");
 		}
 		int numocurrencias=5;
-		removeInteger(array, numocurrencias);
+		int[] nuevoArray = removeInteger(array, numocurrencias);
+		
+		for (int i = 0; i < nuevoArray.length; i++) {
+			System.out.print(nuevoArray[i] + " " );
+		}
 		
 //		String str = JOptionPane.showInputDialog("Introduce un número");
 //		numocurrencias= Integer.parseInt(str);
@@ -43,13 +47,12 @@ La entrega a esta tarea se debe hacer oblligatoriamente entregando la dirección
 		}
 		System.out.println(" ");
 		int arraynuevo[] = new int[array.length-cont] ;
-		for (int i = 0; i < arraynuevo.length; i++) {
-			if(array[i]==numocurrencias) {
-				
-			}else {
-				arraynuevo[i]=array[i];
+		int j = 0;
+		for (int i = 0; i < array.length; i++) {
+			if(array[i] != numocurrencias) {
+				arraynuevo[j] = array[i];
+				j++;
 			}
-			System.out.print(arraynuevo[i] + " ");
 		}
 		return arraynuevo;
 		
