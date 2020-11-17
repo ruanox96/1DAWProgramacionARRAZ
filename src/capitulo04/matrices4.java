@@ -1,7 +1,5 @@
 package capitulo04;
 
-import utils.Utils;
-
 public class matrices4 {
 
 	public static void main(String[] args) {
