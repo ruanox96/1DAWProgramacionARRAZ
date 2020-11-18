@@ -5,7 +5,7 @@ public class matrices4 {
 	public static void main(String[] args) {
 		int matriz[][] = new int[][] {{1, 0, 0},
 			  						  {0, 1 ,0},
-			  						  {0, 2, 1}};
+			  						  {0, 0, 1}};
 
 		boolean siono = matrizdiagonal(matriz);							  
 		if (siono== true) {
