@@ -1,20 +1,19 @@
 package capitulo04;
 
-import utils.Utils;
 
 public class Matrices7 {
 
 	public static void main(String[] args) {
-		int matriz[][] = new int[3][3];
-		for (int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j < matriz.length; j++) {
-				matriz[i][j] = Utils.obtenerNumeroAzar();
-				System.out.print(matriz[i][j] + "\t");
-			}
+		int matriz[][] = new int[][] { { 1, 0, 0 }, 
+			   						   { 0, 1, 0 }, 
+			   						   { 0, 0, 1 } };
+			
+			Matrices2.imprimirmatriz(matriz);
 			System.out.println();
+			arrayUnidimensional(matriz);
 		}
-		arrayUnidimensional(matriz);
-	}
+		
+	
 
 	public static void arrayUnidimensional(int[][] matriz) {
 
