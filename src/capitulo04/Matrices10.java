@@ -19,7 +19,11 @@ public class Matrices10 {
 		Matrices2.imprimirmatriz(opuesta);
 
 	}
-
+/**
+ * 
+ * @param matriz
+ * @return
+ */
 	public static int[][] matrizOpuesta(int matriz[][]) {
 		int filas = matriz.length;
 		int column = matriz[0].length;
