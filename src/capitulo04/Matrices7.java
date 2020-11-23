@@ -6,7 +6,8 @@ public class Matrices7 {
 	public static void main(String[] args) {
 		int matriz[][] = new int[][] { { 1, 0, 0 }, 
 			   						   { 0, 1, 0 }, 
-			   						   { 0, 0, 1 } };
+			   						   { 0, 0, 1 },
+			   						   { 9, 9, 5 } };
 			
 			Matrices2.imprimirmatriz(matriz);
 			System.out.println();
@@ -24,10 +25,10 @@ public class Matrices7 {
 
 		int indice = 0;
 		
-		int array[] = new int[matriz.length * matriz.length];
+		int array[] = new int[matriz.length * matriz[0].length];
 	
 		for (int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j < matriz.length; j++) {
+			for (int j = 0; j < matriz[0].length; j++) {
 				array[indice] = matriz[i][j];
 				indice++;
 			}
