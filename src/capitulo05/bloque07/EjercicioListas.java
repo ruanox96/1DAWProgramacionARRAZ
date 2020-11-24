@@ -121,7 +121,7 @@ public class EjercicioListas {
 		
 		portapapeles.addAll(lista);
 		
-		if ()
+		
 		for(int i = num; i < num2; i++) {
 			
 		}
