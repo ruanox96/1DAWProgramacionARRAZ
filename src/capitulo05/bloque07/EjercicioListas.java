@@ -14,6 +14,7 @@ public class EjercicioListas {
 		// Declaro variables necesarias
 		int opcion;
 		List<String> fichero = new ArrayList<String>();
+		List<String> portapapeles = new ArrayList<String>();
 
 		// Inicializo algo de contenido en la lista. Esto debe eliminarse cuando el
 		// programa esté finalizado
@@ -44,7 +45,7 @@ public class EjercicioListas {
 				eliminarLinea(fichero);
 				break;
 			case 5:
-				cortarLineas(fichero);
+				cortarLineas(fichero, portapapeles);
 				break;
 			case 6:
 				break;
@@ -87,56 +88,44 @@ public class EjercicioListas {
 			System.out.println("\t" + i + " - " + lista.get(i));
 		}
 	}
-	
-	public static void agregarLinea (List<String> lista) {
+
+	public static void agregarLinea(List<String> lista) {
 		String str = JOptionPane.showInputDialog("Escribe la linea a insertar");
 		lista.add(str);
 	}
-	
-	public static void insertarLinea (List<String> lista) {
+
+	public static void insertarLinea(List<String> lista) {
 		String str = JOptionPane.showInputDialog("Escribe la linea a insertar");
 		int num = Utils.obtenerEnteroPorJOptionPane();
-		
+
 		lista.add(num, str);
 	}
-	public static void editarLinea (List<String> lista) {
+
+	public static void editarLinea(List<String> lista) {
 		int num = Utils.obtenerEnteroPorJOptionPane();
 		lista.remove(num);
 		String str = JOptionPane.showInputDialog("Escribe la linea a insertar");
 		lista.add(num, str);
 	}
-	
-	public static void eliminarLinea (List<String> lista) {
+
+	public static void eliminarLinea(List<String> lista) {
 		int num = Utils.obtenerEnteroPorJOptionPane();
 		lista.remove(num);
 	}
-	
-	public static void cortarLineas (List<String> lista) {
-		List<String> portapapeles = new ArrayList<String>();
+
+	public static void cortarLineas(List<String> lista, List<String> portapapeles) {
+
+		if (!portapapeles.isEmpty()) {
+			portapapeles.removeAll(portapapeles);
+		}
 		System.out.println("Escribe la primera linea a cortar");
 		int num = Utils.obtenerEnteroPorJOptionPane();
 		System.out.println("Escribe la última linea a cortar");
 		int num2 = Utils.obtenerEnteroPorJOptionPane();
-		
-		
-		portapapeles.addAll(lista);
-		
-		
-		for(int i = num; i < num2; i++) {
-			
+		for (int i = num; i <= num2; i++) {
+			portapapeles.add(lista.remove(num));
 		}
-		
-		System.out.println("\n\nContenido del fichero");
-		for (int i = 0; i < portapapeles.size(); i++) {
-			System.out.println("\t" + i + " - " + portapapeles.get(i));
-		}
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	
+
 }
