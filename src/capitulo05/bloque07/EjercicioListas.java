@@ -15,6 +15,7 @@ public class EjercicioListas {
 		int opcion;
 		List<String> fichero = new ArrayList<String>();
 		List<String> portapapeles = new ArrayList<String>();
+		List<String> fichero2 = new ArrayList<String>();
 
 		// Inicializo algo de contenido en la lista. Esto debe eliminarse cuando el
 		// programa esté finalizado
@@ -48,9 +49,13 @@ public class EjercicioListas {
 				cortarLineas(fichero, portapapeles);
 				break;
 			case 6:
+				pegarLineas(fichero2, portapapeles);
 				break;
 			case 7: // Ha elegido visualizar el fichero
 				visualizaLista(fichero);
+				break;
+			case 8: // Ha elegido visualizar el fichero
+				visualizaLista(fichero2);
 				break;
 			default:
 				System.out.println("Opción no válida");
@@ -69,7 +74,7 @@ public class EjercicioListas {
 		String strMenu = "\n\nMenú" + "\n0.- Salir" + "\n1.- Agregar una línea"
 				+ "\n2.- Insertar una línea en una posición" + "\n3.- Editar una línea" + "\n4.- Eliminar una línea"
 				+ "\n5.- Cortar un conjunto de líneas" + "\n6.- Pegar un conjunto de líneas"
-				+ "\n7.- Visualizar el fichero" + "\n\nIntroduzca su opción: ";
+				+ "\n7.- Visualizar el fichero" + "\n8.- Visualizar el fichero2" + "\n\nIntroduzca su opción: ";
 		// Pido una opción al usuario
 		int opcionUsuario = Integer.parseInt(JOptionPane.showInputDialog(strMenu));
 		// Devuelvo la opción seleccionada
@@ -126,6 +131,13 @@ public class EjercicioListas {
 			portapapeles.add(lista.remove(num));
 		}
 
+	}
+	
+	public static void pegarLineas(List<String> lista, List<String> portapapeles) {
+		int num = Utils.obtenerEnteroPorJOptionPane();
+		
+		lista.addAll(num, portapapeles);
+	
 	}
 
 }
