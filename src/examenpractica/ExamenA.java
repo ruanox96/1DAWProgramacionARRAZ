@@ -29,33 +29,34 @@ public class ExamenA {
 				haybolos(j1);
 				break;
 			case 3:
-				
+
 				break;
 			case 4:
-				
+
 				break;
 			case 5:
-				
+
 				break;
 			default:
 				System.out.println("Opción no válida");
 			}
 
 		} while (opcion != 0 || haybolos == false);
-	
-		
+
 	}
+
 	public static int menu() {
-		String strMenu = "\n\nMenú" + "\n0.- Salir" + "\n1.- Mostrar Bolos"
-				+ "\n2.- Tirar Bola Jugador 1" + "\n3.- Tirar Bolos Jugador 2";
+		String strMenu = "\n\nMenú" + "\n0.- Salir" + "\n1.- Mostrar Bolos" + "\n2.- Tirar Bola Jugador 1"
+				+ "\n3.- Tirar Bolos Jugador 2";
 		// Pido una opción al usuario
 		int opcionUsuario = Integer.parseInt(JOptionPane.showInputDialog(strMenu));
 		// Devuelvo la opción seleccionada
 		return opcionUsuario;
 	}
-	public static boolean haybolos (int[] array) {
+
+	public static boolean haybolos(int[] array) {
 		for (int i = 0; i < array.length; i++) {
-			if(array[i] == 0) {
+			if (array[i] == 0) {
 				return false;
 			}
 		}
@@ -95,17 +96,17 @@ public class ExamenA {
 			int probabilidad = probabilidadBolos();
 			if (i < 5) {
 				if (probabilidad <= 30) {
-					array[i]=0;
+					array[i] = 0;
 				}
 			}
 			if (i >= 4 && i < 7) {
 				if (probabilidad <= 50) {
-					array[i]=0;
+					array[i] = 0;
 				}
 			}
-			if (i >= 7 && i <=9) {
+			if (i >= 7 && i <= 9) {
 				if (probabilidad <= 70) {
-					array[i]=0;
+					array[i] = 0;
 				}
 			}
 		}
