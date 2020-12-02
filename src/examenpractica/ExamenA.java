@@ -9,7 +9,7 @@ public class ExamenA {
 	public static void main(String[] args) {
 		int opcion;
 		int j1[] = inicializarArray();
-		boolean haybolos = haybolos(j1);
+		boolean haybolos =true;
 		do {
 			// Llamo a mostrar el menú y pedir una opción al usuario.
 			opcion = menu();
@@ -26,7 +26,8 @@ public class ExamenA {
 				System.out.println();
 				j1 = tirarBola(j1);
 				mostrarBolos(j1);
-				haybolos(j1);
+				System.out.println("\nTienes " + puntosBolos(j1) + " puntos");
+				haybolos = haybolos(j1);
 				break;
 			case 3:
 
@@ -41,7 +42,7 @@ public class ExamenA {
 				System.out.println("Opción no válida");
 			}
 
-		} while (opcion != 0 || haybolos == false);
+		} while (opcion != 0 && haybolos == true);
 
 	}
 
@@ -56,11 +57,11 @@ public class ExamenA {
 
 	public static boolean haybolos(int[] array) {
 		for (int i = 0; i < array.length; i++) {
-			if (array[i] == 0) {
-				return false;
+			if (array[i] == 1) {
+				return true;
 			}
 		}
-		return true;
+		return false;
 	}
 
 	public static int[] inicializarArray() {
@@ -94,6 +95,9 @@ public class ExamenA {
 	public static int[] tirarBola(int[] array) {
 		for (int i = 0; i < array.length; i++) {
 			int probabilidad = probabilidadBolos();
+			if (array[i] == 0) {
+				i++;
+			}
 			if (i < 5) {
 				if (probabilidad <= 30) {
 					array[i] = 0;
@@ -112,6 +116,39 @@ public class ExamenA {
 		}
 		return array;
 
+	}
+	
+	public static int puntosBolos (int[] array) {
+		int puntos = 0;
+		for (int i = 0, ronda=1; i < array.length; i++, ronda++) {
+			if (array[i]==0) {
+				if (ronda ==1) {
+					puntos+=10;
+				}
+			}
+			if (array[i]==0) {
+				if (ronda ==2) {
+					puntos+=5;
+				}
+			}
+			if (array[i]==0) {
+				if (ronda ==3) {
+					puntos+=2;
+				}
+			}
+			if (array[i]==0) {
+				if (ronda ==4) {
+					puntos+=1;
+				}
+			}
+			if (array[i]==0) {
+				if (ronda >4) {
+					puntos+=0;
+				}
+			}
+			
+		}
+		return puntos;
 	}
 
 }
