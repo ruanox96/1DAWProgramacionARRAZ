@@ -12,6 +12,10 @@ public class CromoBaloncesto {
 	}
 
 	public CromoBaloncesto(String nombreJugador, int alturacm, int pesokg, float puntosMEdiosPorpartido) {
+		this.nombreJugador = nombreJugador;
+		this.alturacm = alturacm;
+		this.pesokg = pesokg;
+		this.puntosMediosPorpartido = puntosMEdiosPorpartido;
 
 	}
 
@@ -19,7 +23,10 @@ public class CromoBaloncesto {
 		return "Nombre: " + nombreJugador + " - alturacm: " + alturacm + " - pesokg: " + pesokg
 				+ " - puntos Medios Por Partido: " + puntosMediosPorpartido;
 	}
-
+	public String getnombreJugador(String nombreJugador) {
+		return nombreJugador;
+	}
+	
 	
 	public void setnombreJugador(String nombreJugador) {
 		this.nombreJugador = nombreJugador;
