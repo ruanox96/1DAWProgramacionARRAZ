@@ -3,7 +3,7 @@ package capitulo05.bloque02;
 import utils.Utils;
 
 public class Bloque02Ejercicio04 {
-
+	//CICLO ARRAY HACIA DERECHA
 	public static void main(String[] args) {
 		int numeros[] = new int[5];
 		
