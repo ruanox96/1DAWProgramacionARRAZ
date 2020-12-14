@@ -66,8 +66,18 @@ public class Baraja {
 		
 	}
 	
-	public void ordenar(int id) {
-		System.out.println(id);
+	public void ordenar() {
+		int temporal = 0;
+
+	    for (int i = 0; i < cartas.length; i++) {
+	        for (int j = 1; j < (cartas.length - i); j++) {
+	            if (cartas[j - 1] > cartas[id]) {
+	                temporal = cartas[j - 1];
+	                array[j - 1] = array[j];
+	                array[j] = temporal;
+	            }
+	        }
+	    }
 	}
 	
 	
