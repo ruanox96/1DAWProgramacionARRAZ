@@ -1,6 +1,7 @@
 package examenObjetos;
 
 import capitulo04bloque01_PrimerosObjetos.Carta;
+import utils.Utils;
 
 public class Baraja {
 
@@ -50,7 +51,23 @@ public class Baraja {
 	}
 	
 	public void mezclar() {
+		for (int i = 0; i < 25; i++) {
+//			int num1= Utils.obtenerNumeroAzar() % cartas.length -1;
+//			int num2= Utils.obtenerNumeroAzar() % cartas.length -1;
+			int num1 = Utils.obtenerNumeroAzar(1, 52);
+			int num2 = Utils.obtenerNumeroAzar(1, 52);
+			
+			//intercambio de valores
+			Carta aux = cartas[num1];
+			cartas[num1] = cartas[num2];
+			cartas[num2] = aux;
+			
+		}
 		
+	}
+	
+	public void ordenar(int id) {
+		System.out.println(id);
 	}
 	
 	
