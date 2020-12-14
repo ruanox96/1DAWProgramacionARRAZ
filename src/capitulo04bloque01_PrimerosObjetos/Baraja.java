@@ -1,5 +1,6 @@
 package capitulo04bloque01_PrimerosObjetos;
 
+
 public class Baraja {
 	Carta cartas[] =  new Carta[52];
 	/**
@@ -56,7 +57,16 @@ public class Baraja {
 		cartas[0] = aux;
 	}
 	
-	public static void mezclar() {
+	public void mezclar() {
+		for (int i = 0; i < 20; i++) {
+			int primerIndice= utils.Utils.obtenerNumeroAzar() % cartas.length -1;
+			int segundoIndice= utils.Utils.obtenerNumeroAzar() * cartas.length -1;
+			
+			//intercambio
+			Carta aux = cartas[primerIndice];
+			cartas[primerIndice] = cartas[segundoIndice];
+			cartas[segundoIndice] = aux;
+		}
 		
 	}
 	
@@ -68,14 +78,5 @@ public class Baraja {
 		}
 	}
 	
-	
-	
-	
-	
-	public static void main(String[] args) {
-		Baraja baraja = new Baraja();
-		baraja.moverCartaDeAbajoHaciaArriba();
-		baraja.imprimeBaraja();
-	}
 
 }
