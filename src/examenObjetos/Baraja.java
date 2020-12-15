@@ -1,6 +1,7 @@
 package examenObjetos;
 
 import capitulo04bloque01_PrimerosObjetos.Carta;
+import capitulo4_bloque1_primeros_objetos.examen_Cartas.Jugador;
 import utils.Utils;
 
 public class Baraja {
@@ -76,6 +77,21 @@ public class Baraja {
 	            }
 	        }
 	    }
+	}
+	
+	public void darMano(Jugador jugadores) {
+		Carta mano[] = new Carta[5];
+		for (int i = 0; i < mano.length; i++) {
+			int azar;
+			do {
+				azar = Utils.obtenerNumeroAzar(0, 51);
+						mano[i] = cartas[azar] ;
+			} while (cartas[azar] == null);
+			
+			mano[i] = cartas[azar];
+			cartas[azar] = null;
+		}
+		jugadores.setMano(mano);
 	}
 	
 	

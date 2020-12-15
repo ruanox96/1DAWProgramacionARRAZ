@@ -18,16 +18,9 @@ public class Jugador {
 	}
 
 
-	public Jugador(String nombre, Carta[] mano) {
+	public Jugador(String nombre) {
 		super();
 		this.nombre = nombre;
-		this.mano = mano;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Jugador [nombre=" + nombre + ", mano=" + Arrays.toString(mano) + "]";
 	}
 
 
@@ -51,6 +44,9 @@ public class Jugador {
 	}
 	
 	
-	
+	@Override
+	public String toString() {
+		return "Jugador [nombre=" + nombre + ", mano=" + Arrays.toString(mano) + "]";
+	}
 
 }
