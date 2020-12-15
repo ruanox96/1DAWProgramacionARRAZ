@@ -1,7 +1,6 @@
 package examenObjetos;
 
 import capitulo04bloque01_PrimerosObjetos.Carta;
-import capitulo4_bloque1_primeros_objetos.examen_Cartas.Jugador;
 import utils.Utils;
 
 public class Baraja {
