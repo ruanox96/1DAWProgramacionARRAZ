@@ -56,7 +56,7 @@ public class Jugador {
 			}
 			switch (combinaciones) {
 			case 2:
-				System.out.println("Tiene una  Pareja");
+				System.out.println("Tiene una Pareja");
 				System.out.println(" ");
 				break;
 			case 3:
