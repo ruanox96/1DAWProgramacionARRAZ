@@ -51,11 +51,9 @@ public class Baraja {
 	}
 	
 	public void mezclar() {
-		for (int i = 0; i < 25; i++) {
-//			int num1= Utils.obtenerNumeroAzar() % cartas.length -1;
-//			int num2= Utils.obtenerNumeroAzar() % cartas.length -1;
-			int num1 = Utils.obtenerNumeroAzar(1, 52);
-			int num2 = Utils.obtenerNumeroAzar(1, 52);
+		for (int i = 0; i < 100; i++) {
+			int num1 = Utils.obtenerNumeroAzar(0, 51);
+			int num2 = Utils.obtenerNumeroAzar(0, 51);
 			
 			//intercambio de valores
 			Carta aux = cartas[num1];

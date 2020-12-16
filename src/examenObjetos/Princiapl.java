@@ -22,6 +22,12 @@ public class Princiapl {
 		
 		baraja1.ordenar();
 		baraja1.imprimeBaraja();
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		
+		
+		Poker poker = new Poker(baraja1);
 		
 
 	}

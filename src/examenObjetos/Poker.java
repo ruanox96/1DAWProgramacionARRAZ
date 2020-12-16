@@ -8,11 +8,11 @@ public class Poker {
 
 	public Poker(Baraja baraja) {
 		this.baraja = baraja;
-		jugadores[0] = new Jugador("Zulit<3");
-		jugadores[1] = new Jugador("Pablito<3");
-		jugadores[2] = new Jugador("Almudena<3");
-		jugadores[3] = new Jugador("Pedro Antonio");
-		jugadores[4] = new Jugador("Rub�n");
+		jugadores[0] = new Jugador("Ruanox");
+		jugadores[1] = new Jugador("Cristobal");
+		jugadores[2] = new Jugador("Adri");
+		jugadores[3] = new Jugador("KIKEEEEEEE");
+		jugadores[4] = new Jugador("Cabeza_Pensante");
 
 		for (int i = 0; i < jugadores.length; i++) {
 			baraja.darMano(jugadores[i]);
