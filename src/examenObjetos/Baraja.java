@@ -49,49 +49,59 @@ public class Baraja {
 		}
 		cartas[0] = aux;
 	}
-	
+
 	public void mezclar() {
+<<<<<<< HEAD
 		for (int i = 0; i < 100; i++) {
 			int num1 = Utils.obtenerNumeroAzar(0, 51);
 			int num2 = Utils.obtenerNumeroAzar(0, 51);
 			
 			//intercambio de valores
+=======
+		for (int i = 0; i < 25; i++) {
+//			int num1= Utils.obtenerNumeroAzar() % cartas.length -1;
+//			int num2= Utils.obtenerNumeroAzar() % cartas.length -1;
+			int num1 = Utils.obtenerNumeroAzar(1, 52);
+			int num2 = Utils.obtenerNumeroAzar(1, 52);
+
+			// intercambio de valores
+>>>>>>> branch 'main' of https://github.com/ruanox96/1DAWProgramacionARRAZ.git
 			Carta aux = cartas[num1];
 			cartas[num1] = cartas[num2];
 			cartas[num2] = aux;
-			
+
 		}
-		
+
 	}
-	
+
 	public void ordenar() {
-	    for (int i = cartas.length-1; i > 0; i--) {
-	        for (int j = 0; j < i; j++) {
-	            if (cartas[j].getId() > cartas[j+1].getId()) {
-	                Carta aux = cartas[j];
-	                cartas[j] = cartas[j+1];
-	                cartas[j+1] = aux;
-	            }
-	        }
-	    }
+		for (int i = cartas.length - 1; i > 0; i--) {
+			for (int j = 0; j < i; j++) {
+				if (cartas[j].getId() > cartas[j + 1].getId()) {
+					Carta aux = cartas[j];
+					cartas[j] = cartas[j + 1];
+					cartas[j + 1] = aux;
+				}
+			}
+		}
 	}
-	
+
 	public void darMano(Jugador jugadores) {
 		Carta mano[] = new Carta[5];
 		for (int i = 0; i < mano.length; i++) {
 			int azar;
 			do {
 				azar = Utils.obtenerNumeroAzar(0, 51);
-						mano[i] = cartas[azar] ;
+				mano[i] = cartas[azar];
 			} while (cartas[azar] == null);
-			
+
 			mano[i] = cartas[azar];
 			cartas[azar] = null;
 		}
 		jugadores.setMano(mano);
 	}
-	
-	
+
+
 	public void imprimeBaraja() {
 		for (int i = 0; i < cartas.length; i++) {
 			System.out.println(cartas[i]);

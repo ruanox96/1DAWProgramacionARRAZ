@@ -45,5 +45,30 @@ public class Jugador {
 	public String toString() {
 		return "Jugador [nombre=" + nombre + ", mano=" + Arrays.toString(mano) + "]";
 	}
+	
+	public void combinaciones() {
+		for (int i = 0; i < this.mano.length; i++) {
+			int combinaciones = 1;
+			for (int j = i + 1; j < mano.length; j++) {
+				if (mano[i].getValor() == mano[j].getValor()) {
+					combinaciones++;
+				}
+			}
+			switch (combinaciones) {
+			case 2:
+				System.out.println("Hay Pareja");
+				System.out.println(" ");
+				break;
+			case 3:
+				System.out.println("Hay un trio");
+				System.out.println(" ");
+				break;
+			case 4:
+				System.out.println("Poker");
+				System.out.println(" ");
+				break;
+			}
+		}
+	}
 
 }
