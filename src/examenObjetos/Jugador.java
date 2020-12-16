@@ -56,15 +56,15 @@ public class Jugador {
 			}
 			switch (combinaciones) {
 			case 2:
-				System.out.println("Hay Pareja");
+				System.out.println("Tiene una  Pareja");
 				System.out.println(" ");
 				break;
 			case 3:
-				System.out.println("Hay un trio");
+				System.out.println("Tiene un trio");
 				System.out.println(" ");
 				break;
 			case 4:
-				System.out.println("Poker");
+				System.out.println("Tiene Poker");
 				System.out.println(" ");
 				break;
 			}
