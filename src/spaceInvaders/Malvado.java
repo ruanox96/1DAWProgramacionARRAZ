@@ -1,15 +1,15 @@
 package spaceInvaders;
 
 public class Malvado {
-	private int puntosVidaa;
+	private int puntosVida = utils.Utils.obtenerNumeroAzar(50, 100);
 	private String nombre;
 	private boolean vivo;
 	
 	
 	
-	public Malvado(int puntosVidaa, String nombre, boolean vivo) {
+	public Malvado(int puntosVida, String nombre, boolean vivo) {
 		super();
-		this.puntosVidaa = puntosVidaa;
+		this.puntosVida = puntosVida;
 		this.nombre = nombre;
 		this.vivo = vivo;
 	}
@@ -21,13 +21,13 @@ public class Malvado {
 	}
 
 
-	public int getPuntosVidaa() {
-		return puntosVidaa;
+	public int getPuntosVida() {
+		return puntosVida;
 	}
 
 
-	public void setPuntosVidaa(int puntosVidaa) {
-		this.puntosVidaa = puntosVidaa;
+	public void setPuntosVida(int puntosVida) {
+		this.puntosVida = puntosVida;
 	}
 
 
@@ -53,7 +53,7 @@ public class Malvado {
 
 	@Override
 	public String toString() {
-		return "Malvado [puntosVidaa=" + puntosVidaa + ", nombre=" + nombre + ", vivo=" + vivo + "]";
+		return "Malvado [puntosVida=" + puntosVida + ", nombre=" + nombre + ", vivo=" + vivo + "]";
 	}
 	
 	
