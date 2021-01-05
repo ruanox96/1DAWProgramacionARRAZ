@@ -1,7 +1,8 @@
 package spaceInvaders;
+import utils.*;
 
 public class Humano {
-	private int puntosVida = utils.Utils.obtenerNumeroAzar(50, 100);
+	private int puntosVida;
 	private String nombre;
 	private boolean vivo;
 	
@@ -11,14 +12,15 @@ public class Humano {
 	public Humano() {
 		super();
 		// TODO Auto-generated constructor stub
+		
 	}
 
 
-	public Humano(int puntosVida, String nombre, boolean vivo) {
+	public Humano(String nombre) {
 		super();
-		this.puntosVida = puntosVida;
+		this.puntosVida = Utils.obtenerNumeroAzar(50, 100);
+		this.vivo = true;
 		this.nombre = nombre;
-		this.vivo = vivo;
 	}
 
 

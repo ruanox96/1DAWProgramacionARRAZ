@@ -1,17 +1,18 @@
 package spaceInvaders;
+import utils.*;
 
 public class Malvado {
-	private int puntosVida = utils.Utils.obtenerNumeroAzar(50, 100);
+	private int puntosVida;
 	private String nombre;
 	private boolean vivo;
 	
 	
 	
-	public Malvado(int puntosVida, String nombre, boolean vivo) {
+	public Malvado(String nombre) {
 		super();
-		this.puntosVida = puntosVida;
+		this.puntosVida = Utils.obtenerNumeroAzar(50, 100);
 		this.nombre = nombre;
-		this.vivo = vivo;
+		this.vivo = true;
 	}
 
 
