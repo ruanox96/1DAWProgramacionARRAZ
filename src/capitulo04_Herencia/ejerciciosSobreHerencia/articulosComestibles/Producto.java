@@ -4,7 +4,6 @@ public class Producto {
 	private int codigo;
 	private String nombre;
 	private int precio;
-	private String fecha_caducidad;
 	
 	
 	
@@ -19,14 +18,15 @@ public class Producto {
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.precio = precio;
-		this.fecha_caducidad = fecha_caducidad;
 	}
+
+
+	
 
 
 	@Override
 	public String toString() {
-		return "Perecederos [codigo=" + codigo + ", nombre=" + nombre + ", precio=" + precio + ", fecha_caducidad="
-				+ fecha_caducidad + "]";
+		return "Producto [codigo=" + codigo + ", nombre=" + nombre + ", precio=" + precio + "]";
 	}
 
 
@@ -57,16 +57,6 @@ public class Producto {
 
 	public void setPrecio(int precio) {
 		this.precio = precio;
-	}
-
-
-	public String getFecha_caducidad() {
-		return fecha_caducidad;
-	}
-
-
-	public void setFecha_caducidad(String fecha_caducidad) {
-		this.fecha_caducidad = fecha_caducidad;
 	}
 	
 	
