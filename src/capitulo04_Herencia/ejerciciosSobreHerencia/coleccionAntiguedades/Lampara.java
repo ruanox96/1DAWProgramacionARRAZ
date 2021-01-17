@@ -10,15 +10,12 @@ public class Lampara extends Antiguedad {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Lampara(int year, String origen, int precioVenta) {
+	public Lampara(int year, String origen, int precioVenta, int numbombillas, String material) {
 		super(year, origen, precioVenta);
-		// TODO Auto-generated constructor stub
-	}
-	public Lampara(int numbombillas, String material) {
-		super();
-		this.numbombillas = numbombillas;
+		this.numbombillas =  numbombillas;
 		this.material = material;
 	}
+	
 	@Override
 	public String toString() {
 		return "Lampara [numbombillas=" + numbombillas + ", material=" + material + "]";

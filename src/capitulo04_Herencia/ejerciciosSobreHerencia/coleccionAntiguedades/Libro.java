@@ -10,16 +10,12 @@ public class Libro extends Antiguedad {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Libro(int year, String origen, int precioVenta) {
+	public Libro(int year, String origen, int precioVenta, String titulo, String autor) {
 		super(year, origen, precioVenta);
-		// TODO Auto-generated constructor stub
-	}
-	
-	public Libro(String titulo, String autor) {
-		super();
 		this.titulo = titulo;
 		this.autor = autor;
 	}
+	
 	@Override
 	public String toString() {
 		return "Libro [titulo=" + titulo + ", autor=" + autor + "]";

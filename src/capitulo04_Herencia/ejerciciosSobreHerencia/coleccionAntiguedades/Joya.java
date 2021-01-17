@@ -10,13 +10,8 @@ public class Joya extends Antiguedad {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Joya(int year, String origen, int precioVenta) {
+	public Joya(int year, String origen, int precioVenta, String material, int peso) {
 		super(year, origen, precioVenta);
-		// TODO Auto-generated constructor stub
-	}
-	
-	public Joya(String material, int peso) {
-		super();
 		this.material = material;
 		this.peso = peso;
 	}
