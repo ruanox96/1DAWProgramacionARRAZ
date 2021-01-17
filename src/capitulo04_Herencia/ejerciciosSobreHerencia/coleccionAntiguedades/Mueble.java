@@ -10,15 +10,12 @@ public class Mueble extends Antiguedad {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Mueble(int year, String origen, int precioVenta) {
+	public Mueble(int year, String origen, int precioVenta, String material, String color) {
 		super(year, origen, precioVenta);
-		// TODO Auto-generated constructor stub
-	}
-	public Mueble(String material, String color) {
-		super();
 		this.material = material;
 		this.color = color;
 	}
+	
 	@Override
 	public String toString() {
 		return "Mueble [material=" + material + ", color=" + color + "]";
