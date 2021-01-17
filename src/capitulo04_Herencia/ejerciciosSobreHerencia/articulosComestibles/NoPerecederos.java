@@ -7,10 +7,13 @@ public class NoPerecederos extends Producto {
 		// TODO Auto-generated constructor stub
 	}
 
-	public NoPerecederos(int codigo, String nombre, int precio, String fecha_caducidad) {
-		super(codigo, nombre, precio, fecha_caducidad);
+	public NoPerecederos(int codigo, String nombre, int precio) {
+		super(codigo, nombre, precio);
 		// TODO Auto-generated constructor stub
 	}
+
+	
+	
 	
 	
 

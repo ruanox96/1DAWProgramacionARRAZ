@@ -9,9 +9,11 @@ public class Perecederos extends Producto {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Perecederos(int codigo, String nombre, int precio, String fecha_caducidad) {
-		super(codigo, nombre, precio, fecha_caducidad);
+	public Perecederos(int codigo, String nombre, int precio, String fechaCaducidad) {
+		super(codigo, nombre, precio);
 		// TODO Auto-generated constructor stub
+		this.FechaCaducidad = fechaCaducidad;
+		
 	}
 
 	public Perecederos(String fechaCaducidad) {
@@ -19,9 +21,11 @@ public class Perecederos extends Producto {
 		FechaCaducidad = fechaCaducidad;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Perecederos [FechaCaducidad=" + FechaCaducidad + "]";
+		return "Perecederos [FechaCaducidad=" + FechaCaducidad + ", codigo=" + codigo + ", nombre=" + nombre
+				+ ", precio=" + precio + "]";
 	}
 
 	public String getFechaCaducidad() {
@@ -31,6 +35,7 @@ public class Perecederos extends Producto {
 	public void setFechaCaducidad(String fechaCaducidad) {
 		FechaCaducidad = fechaCaducidad;
 	}
+
 	
 	
 

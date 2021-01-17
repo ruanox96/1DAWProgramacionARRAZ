@@ -1,9 +1,9 @@
 package capitulo04_Herencia.ejerciciosSobreHerencia.articulosComestibles;
 
 public class Producto {
-	private int codigo;
-	private String nombre;
-	private int precio;
+ int codigo;
+	 String nombre;
+	 int precio;
 	
 	
 	
@@ -13,15 +13,14 @@ public class Producto {
 	}
 
 
-	public Producto(int codigo, String nombre, int precio, String fecha_caducidad) {
+
+	public Producto(int codigo, String nombre, int precio) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.precio = precio;
 	}
 
-
-	
 
 
 	@Override
@@ -30,9 +29,11 @@ public class Producto {
 	}
 
 
+
 	public int getCodigo() {
 		return codigo;
 	}
+
 
 
 	public void setCodigo(int codigo) {
@@ -40,9 +41,11 @@ public class Producto {
 	}
 
 
+
 	public String getNombre() {
 		return nombre;
 	}
+
 
 
 	public void setNombre(String nombre) {
@@ -50,14 +53,19 @@ public class Producto {
 	}
 
 
+
 	public int getPrecio() {
 		return precio;
 	}
 
 
+
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
+	
+	
+	
 	
 	
 	
