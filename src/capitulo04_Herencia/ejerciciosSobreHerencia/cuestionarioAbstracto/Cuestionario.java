@@ -1,34 +1,47 @@
 package capitulo04_Herencia.ejerciciosSobreHerencia.cuestionarioAbstracto;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Cuestionario {
+
+static List<Pregunta>preguntas = new ArrayList <Pregunta>();
 	
-	static List<Pregunta> preguntas = new ArrayList <Pregunta>();
 	
 	public static void main(String[] args) {
 		
-		PreguntaVF capitalSpain = new preguntaVF("La capital de España es Madrid");
+
+		PreguntaVF capitalSpain = new PreguntaVF("Madrid es la capital de España", "V");
+		
+		PreguntaVF drogas = new PreguntaVF("Las drogas estan permitidas en España","F");
+		
+		PreguntaVF carnet = new PreguntaVF("Te puedes sacar el carnet de coche a los 18 años ","V");
+		
+		PreguntaOpcionUnica nombrePerro = new PreguntaOpcionUnica("¿Cual es el nombre de mi primera mascota?", 3, new String[] {"Rapida","Ash","Liko","Fufi","Gordi"});
+		
+		PreguntaOpcionUnica edad = new PreguntaOpcionUnica("Edad mínima para el carnet de ciclomotor", 3, new String[] {"14","15","16","19","25"});
+		
 		preguntas.add(capitalSpain);
-		preguntasVF borrasca = new PreguntaVF("Filomena ha sido un anticiclón", "F");
-		preguntas.add(borrasca);
+		preguntas.add(drogas);
+		preguntas.add(carnet);
+		preguntas.add(nombrePerro);
+		preguntas.add(edad);
 		
-		PreguntaOpcionUnica capitalAndalucia = new PreguntaOpcionUnica("Capital de Andalucia"),
-				new String[] {"Sevilla", "Málaga", "Córdoba", "Almeria"}, 0;
-				preguntas.add(capitalSpain);
-				
-				int aciertos=0;
-				for(Pregunta p : preguntas) {
-					p.mostrarPregunta();
-					Scanner sc = new Scanner(System.in);
-					String respuestaUsuario = sc.nextLine();
-						boolean correcta = p.verificarRespuesta();
-						if (correcta) {
-							aciertos++;
-						}
-				}
-				
-				float puntuacion = aciertos / (float) preguntas.size() * 100;
-				System.out.println("Puntuación " + puntuacion);
+		int aciertos =0;
+		for (Pregunta p : preguntas) {
+			p.muestraEnPantalla();
+			Scanner sc = new Scanner(System.in);
+			String respuestaUsuario = sc.nextLine();
+			boolean correcta = p.esCorecta(respuestaUsuario);
+			if(correcta) {
+				aciertos++;
+			}
+			
+		}
+		float porcentaje = aciertos / (float)preguntas.size()  * 100;
 		
+		System.out.println(porcentaje);
 		
 	}
 
