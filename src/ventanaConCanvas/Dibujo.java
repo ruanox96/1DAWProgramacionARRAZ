@@ -23,6 +23,14 @@ public class Dibujo extends Canvas {
 		
 		g.setColor(Color.DARK_GRAY);
 		g.drawOval(50, 50, 60, 60);
+		
+		g.setColor(Color.pink);
+		int [] vx2 = {400, 450, 350};
+        int [] vy2 = {170, 220, 220};
+        g.fillPolygon (vx2, vy2, 3);
+        
+        g.setColor(Color.black);
+        g.drawPolygon(vx2, vy2, 3);
 	}
 
 }
