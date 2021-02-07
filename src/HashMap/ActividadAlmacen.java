@@ -15,9 +15,9 @@ public class ActividadAlmacen {
 	private static void HashMap() {
 	
 		
-		hm.put(3754, new Articulo("Pipas", 2, 18));
-		hm.put(3874, new Articulo("Peras", 1, 22));
-		hm.put(38944, new Articulo("Cucharas", 3, 50));
+		hm.put(3754, new Articulo("Coca-Cola", 1, 15));
+		hm.put(3874, new Articulo("Cacao", 5, 10));
+		hm.put(38944, new Articulo("Papel", 2, 40));
 				
 	}
 		
@@ -30,7 +30,7 @@ public class ActividadAlmacen {
 			
 			switch (opcion) {
 			case 0: // Ha elegido abandonar la aplicación
-				System.out.println("HAS ABANDONADO LA APLICACI�N.");
+				System.out.println("HAS ABANDONADO LA APLICACION.");
 				break;
 			case 1: //A�adir art�culos
 				agregarHashMap();
@@ -67,7 +67,7 @@ public class ActividadAlmacen {
 				visualizaHashMap();
 				break;
 			default:
-				System.out.println("Opci�n no v�lida");
+				System.out.println("Opcion no valida");
 			}
 			
 			// El bucle se repetirá mientras no se pulse la opción de salir.
@@ -75,17 +75,17 @@ public class ActividadAlmacen {
 	}
 	
 	public static int menu () {
-		String strMenu = "\n\nMen�"
+		String strMenu = "\n\nMenu"
 				+ "\n0.- Salir"
-				+ "\n1.- Agregar un art�culo"
-				+ "\n2.- Eliminar un art�culo"
-				+ "\n3.- Actualizar el estante de un art�culo"
-				+ "\n4.- A�adir nombre a un art�culo"
-				+ "\n5.- A�adir stock a un art�culo"
-				+ "\n6.- Encontrar un art�culo"
+				+ "\n1.- Agregar articulo"
+				+ "\n2.- Eliminar articulo"
+				+ "\n3.- Actualizar el estante"
+				+ "\n4.- Añadir nombre a un articulo"
+				+ "\n5.- Añadir stock a un articulo"
+				+ "\n6.- Encontrar un articulo"
 				+ "\n7.- Limitar stock"
-				+ "\n8.- Ver lista de art�culos"
-				+ "\n\nIntroduzca su opci�n: ";
+				+ "\n8.- Ver lista de articulos"
+				+ "\n\nIntroduzca su opcion: ";
 		// Muestro el menú y pido una opción al usuario
 		int opcionUsuario = Integer.parseInt(JOptionPane.showInputDialog(strMenu));
 		// Devuelvo la opción seleccionada
@@ -96,16 +96,16 @@ public class ActividadAlmacen {
 		System.out.println("\nTodos los productos dentro del HashMap:");
 		Object claves[] = hm.keySet().toArray();
 		for (int i = 0; i < claves.length; i++) {
-			System.out.println(" C�digo de barras del art�culo: " + claves[i].toString() + " - Objeto obtenido: "  + hm.get(claves[i]));
+			System.out.println(" Codigo de barras del articulo: " + claves[i].toString() + " - Objeto obtenido: "  + hm.get(claves[i]));
 		}
 		}
 	
 	public static void agregarHashMap() {
 	
-		nombre = JOptionPane.showInputDialog("Inserte el nombre del art�culo: ");
-		codigo = Integer.parseInt(JOptionPane.showInputDialog("Inserte el c�digo del art�culo: "));
-		NumEstante = Integer.parseInt(JOptionPane.showInputDialog("Inserte el n�mero de estante del art�culo: "));
-		stock = Integer.parseInt(JOptionPane.showInputDialog("Inserte la cantidad de stock del art�culo: "));
+		nombre = JOptionPane.showInputDialog("Inserte el nombre del articulo: ");
+		codigo = Integer.parseInt(JOptionPane.showInputDialog("Inserte el codigo del articulo: "));
+		NumEstante = Integer.parseInt(JOptionPane.showInputDialog("Inserte el numero de estante del articulo: "));
+		stock = Integer.parseInt(JOptionPane.showInputDialog("Inserte la cantidad de stock del articulo: "));
 
 		hm.put(codigo, new Articulo(nombre, NumEstante, stock));
 		
@@ -113,22 +113,22 @@ public class ActividadAlmacen {
 	
 	public static void eliminarHashMap() {
 		int eliminar;
-		eliminar = Integer.parseInt(JOptionPane.showInputDialog("Introduce un n�mero de art�culo para eliminarlo: "));
+		eliminar = Integer.parseInt(JOptionPane.showInputDialog("Introduce un numero de articulo para eliminarlo: "));
 		hm.remove(eliminar);
 	}
 	
 	public static void actualizarEstante() {
 		
-		int codigo = Integer.parseInt(JOptionPane.showInputDialog("Introduce el c�digo de barras del art�culo que desea cambiar: "));
+		int codigo = Integer.parseInt(JOptionPane.showInputDialog("Introduce el codigo de barras del articulo que desea cambiar: "));
 		System.out.println(hm.get(codigo));
 				
-		int numEs = Integer.parseInt(JOptionPane.showInputDialog("Introduce un n�mero de estanter�a nuevo: "));
+		int numEs = Integer.parseInt(JOptionPane.showInputDialog("Introduce un numero de estanteria nuevo: "));
 		
 		hm.get(codigo).setNumEstante(numEs);
 	}
 	
 	public static void actualizarNombre() {		
-		int codigo = Integer.parseInt(JOptionPane.showInputDialog("Introduce el c�digo de barras del art�culo que desea cambiar: "));
+		int codigo = Integer.parseInt(JOptionPane.showInputDialog("Introduce el codigo de barras del articulo que desea cambiar: "));
 		
 		System.out.println(hm.get(codigo));
 				
@@ -140,7 +140,7 @@ public class ActividadAlmacen {
 	public static void actualizarStock() {
 		String str;
 		
-		str = JOptionPane.showInputDialog("Introduce el c�digo de barras del art�culo que quiere cambiar: ");
+		str = JOptionPane.showInputDialog("Introduce el codigo de barras del articulo que quiere cambiar: ");
 		int codigo = Integer.parseInt(str);
 		System.out.println(hm.get(codigo));
 				
@@ -153,7 +153,7 @@ public class ActividadAlmacen {
 	public static void encontrarArticulo() {
 		String str;
 		
-		str = JOptionPane.showInputDialog("Introduce el c�digo de barras del art�culo que quieres encontrar: ");
+		str = JOptionPane.showInputDialog("Introduce el codigo de barras del articulo que quieres encontrar: ");
 		int codigo = Integer.parseInt(str);
 		System.out.println(hm.get(codigo));
 	}
