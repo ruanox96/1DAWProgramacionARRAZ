@@ -1,19 +1,45 @@
 package Wrapper;
 
+import javax.swing.JOptionPane;
+
 public class Ejercicio2 {
 
 	public static void main(String[] args) {
-		char cadenaTexto[] = new char[] {'H', 'o', 'l', 'a', ' ', 'A', 'm', 'i', 'g', 'o', ' ', '2', '5', '5', '\n'};
-		System.out.println ("\nAnalizará el array de caracteres: " + cadenaTexto.toString());
-		for (int i = 0; i < cadenaTexto.length; i++) {
-			System.out.println("'" + cadenaTexto[i] + "' es dígito: " + Character.isDigit(cadenaTexto[i]));
-			System.out.println("'" + cadenaTexto[i] + "' es letra: " + Character.isLetter(cadenaTexto[i]));
-			System.out.println("'" + cadenaTexto[i] + "' es letra o dígito: " + Character.isLetterOrDigit(cadenaTexto[i]));
-			System.out.println("'" + cadenaTexto[i] + "' es minúscula: " + Character.isLowerCase(cadenaTexto[i]));
-			System.out.println("'" + cadenaTexto[i] + "' es mayúscula: " + Character.isUpperCase(cadenaTexto[i]));
-			System.out.println("'" + cadenaTexto[i] + "' es un caracter similar a espacio en blanco: " + Character.isWhitespace(cadenaTexto[i]));
-			
-		}
+		boolean noAlfanumerico = false;
+		boolean digito = false;
+		boolean minuscula = false;
+		boolean mayuscula = false;
+		int i;
+
+		do {
+
+			String contr = JOptionPane.showInputDialog(
+					"Introduce una contraseña que tenga:\n" + "Al menos una mayúscula\n" + "Al menos una minúscula\n"
+							+ "Al menos un dígito\n" + "Al menos un carácter no alfanumérico");
+
+			char cad[];
+			cad = contr.toCharArray();
+
+			System.out.println("\nAnaliza el array de caracteres: " + cad.toString());
+			for (i = 0; i < cad.length; i++) {
+
+				if (digito == false) {
+					digito = Character.isDigit(cad[i]);
+				}
+				if (mayuscula == false) {
+					mayuscula = Character.isUpperCase(cad[i]);
+				}
+				if (minuscula == false) {
+					minuscula = Character.isLowerCase(cad[i]);
+				}
+				if (noAlfanumerico == false) {
+					noAlfanumerico = Character.isLetterOrDigit(cad[i]);
+				}
+			}
+			System.out.println("Contraseña incorrecta.");
+
+		} while (digito == false || minuscula == false || mayuscula == false || noAlfanumerico == false);
+		System.out.println("Contraseña válida.");
 
 	}
 
