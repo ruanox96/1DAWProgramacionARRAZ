@@ -12,6 +12,7 @@ public class Ejercicio2 {
 			System.out.println("'" + cadenaTexto[i] + "' es minúscula: " + Character.isLowerCase(cadenaTexto[i]));
 			System.out.println("'" + cadenaTexto[i] + "' es mayúscula: " + Character.isUpperCase(cadenaTexto[i]));
 			System.out.println("'" + cadenaTexto[i] + "' es un caracter similar a espacio en blanco: " + Character.isWhitespace(cadenaTexto[i]));
+			
 		}
 
 	}
