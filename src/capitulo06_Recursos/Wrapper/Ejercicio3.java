@@ -1,4 +1,4 @@
-package Wrapper;
+package capitulo06_Recursos.Wrapper;
 
 public class Ejercicio3 {
 
