@@ -11,22 +11,22 @@ public class Ej1 {
 
 	public static void main(String[] args) {
 
-		String strFecha = JOptionPane.showInputDialog("Introduce una fecha: ");
+		String strFecha = JOptionPane.showInputDialog("Introduce la fecha en dd/mm/yyyy ");
 		Calendar calendar = Calendar.getInstance();
 		Date fecha = null;
 		
+		
 		try {
-			fecha = new SimpleDateFormat("d MMM yyyy").parse(strFecha);
+			fecha = new SimpleDateFormat("dd/MM/yyyy").parse(strFecha);
 			System.out.println(fecha);
 			
 		} 
-		
 		catch (ParseException e) {
 			
 			System.out.println("ParseException occured: " + e.getMessage());
 		}
 		
-		System.out.println("Fecha introducida por el usuario: " + strFecha);
+		System.out.println("Fecha introducida por ti: " + strFecha);
 		System.out.println("Fecha parseada : " + fecha);
 		System.out.println("---------------------------------------------------------------------------------------------------------");
 		System.out.println("CALENDAR : ");
