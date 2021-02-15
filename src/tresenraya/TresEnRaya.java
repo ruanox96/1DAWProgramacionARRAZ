@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
@@ -43,6 +45,22 @@ public class TresEnRaya extends Canvas {
 		
 		//Inicializo la lista con los nueve cuadros que formaran el tablero
 		inicializaCuadrosDelTablero();
+		
+		//Agrego al canvas un MouseAdapter, del cual sobrecargo el metodo mouse clicked
+		this.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				super.mouseClicked(e);
+				// Solo nos interesa el clic con el boton principal del raton
+				if (e.getButton() == MouseEvent.BUTTON1) {
+					for (Cuadro cuadro : cuadros) {
+						if (cuadro.seHaHechoclicSobreCuadro(e.getX(), e.getY())) {
+							cuadro.clic();
+						}
+					}
+				}
+			}
+		});
+		
 		//Desactivoel comportamiento por defecto al pulsar el boton de cirre de ventana
 		ventana.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		// Agrego un demonio a la ventana, parandetectar el evento de cierre de la misma
