@@ -6,10 +6,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
 
 public class TresEnRaya extends Canvas {
 	
@@ -20,6 +23,8 @@ public class TresEnRaya extends Canvas {
 	private static final int JFRAME_WIDTH=700;
 	private static final int JFRAME_HEIGHT=700;
 	
+	//Lista con los objetos tipo cuadro que se van a representar en el canvas
+	List<Cuadro> cuadros = new ArrayList<Cuadro>(); 
 	//Variable para establecer la instancia del patron singleton
 	private static TresEnRaya instance = null;
 	
@@ -36,6 +41,8 @@ public class TresEnRaya extends Canvas {
 		//Dimensiones ventana
 		ventana.setBounds(0, 0, JFRAME_WIDTH, JFRAME_HEIGHT);
 		
+		//Inicializo la lista con los nueve cuadros que formaran el tablero
+		inicializaCuadrosDelTablero();
 		//Desactivoel comportamiento por defecto al pulsar el boton de cirre de ventana
 		ventana.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		// Agrego un demonio a la ventana, parandetectar el evento de cierre de la misma
@@ -56,6 +63,15 @@ public class TresEnRaya extends Canvas {
 			instance = new TresEnRaya();
 		}
 		return instance;
+	}
+	
+	private void inicializaCuadrosDelTablero() {
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				this.cuadros.add(new Cuadro(i, j));
+				
+			}
+		}
 	}
 	
 	//Creamos un metodo con el que preguntaremos al usuario si quiere salir
