@@ -90,11 +90,16 @@ public class TresEnRaya extends Canvas {
 	public void paint(Graphics g) {
 		super.paint(g);
 		//Pinto un recatngulo tan grande como las dimensiones del canvas
-		g.setColor(Color.pink);
+		g.setColor(Color.white);
 		g.fillRect(0, 0, this.getWidth(), this.getHeight());
+		
+		//Pinto cada uno de los cuadros que hay en la lista, utilizando graphics para pintarse a si mismo
+		for (Cuadro cuadro : cuadros) {
+			cuadro.paint(g);
+		}
 	}
 	public static void main(String[] args) {
-		TresEnRaya TresEnRaya = new TresEnRaya();
+		TresEnRaya.getInstance();
 
 	}
 
