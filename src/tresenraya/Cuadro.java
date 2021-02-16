@@ -11,7 +11,7 @@ public class Cuadro {
 	// Ancho y alto de este cuadro
 	private int ancho, alto;
 	//si se ha hecho clic sobre este cuadro
-	private boolean clicHecho = false;
+	private int jugadorPropietario = 0;
 
 
 	public Cuadro(int xEnTablero, int yEnTablero) {
@@ -33,15 +33,24 @@ public class Cuadro {
 		g.drawRect(esquinaSuperiorIzquierdaX, esquinaSuperiorIzquierdaY, ancho, alto);
 		
 		//Pinto imagenes vectoriales sobre este cuadro si se ha hecho clici sobre el
-		if (this.clicHecho) {
-			pintaImagenesVectoriales(g);
-		}
+		pintaImagenesVectoriales(g);
+		
 	
 	}
 	
 	private void pintaImagenesVectoriales (Graphics g) {
-		//Pinto un circulo cada vez que toque repintar este cuadro
-		g.drawOval(this.esquinaSuperiorIzquierdaX, this.esquinaSuperiorIzquierdaY, this.ancho, this.alto);
+		//Ahora dependiendo del jugador [propietario pinto algo diferernte
+		if (this.jugadorPropietario == TresEnRaya.JUGADOR_1) {
+			//PAra pintar una cruz pinto dos lineas que se cruzan
+			g.drawLine(this.esquinaSuperiorIzquierdaX, this.esquinaSuperiorIzquierdaY,
+					this.esquinaSuperiorIzquierdaX + this.ancho, this.esquinaSuperiorIzquierdaY + alto);
+			g.drawLine(this.esquinaSuperiorIzquierdaX, this.esquinaSuperiorIzquierdaY + alto,
+					this.esquinaSuperiorIzquierdaX + this.ancho, this.esquinaSuperiorIzquierdaY);
+		}
+		if(this.jugadorPropietario == TresEnRaya.JUGADOR_2) {
+			g.drawOval(this.esquinaSuperiorIzquierdaX, this.esquinaSuperiorIzquierdaY, this.ancho, this.alto);
+		}
+		
 	}
 	
 	public boolean seHaHechoclicSobreCuadro (int xClic, int yClic) {
@@ -53,8 +62,10 @@ public class Cuadro {
 	}
 	
 	
-	public void clic () {
-		this.clicHecho = true; //Actualizo esta bandera
+	public void clic (int jugador) {
+		if (this.jugadorPropietario == 0) {
+			this.jugadorPropietario = jugador;
+		}
 		
 		//Obligo a repintar el objeto Canvas
 		TresEnRaya.getInstance().repaint();

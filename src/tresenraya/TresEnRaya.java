@@ -30,6 +30,11 @@ public class TresEnRaya extends Canvas {
 	//Variable para establecer la instancia del patron singleton
 	private static TresEnRaya instance = null;
 	
+	//cONTROL SOBRE EEL TURNO DEL JUGADOR
+	public static int JUGADOR_1 = 1;
+	public static int JUGADOR_2 = 2;
+	private int turnoActual = JUGADOR_1;
+	
 	
 	//Constructor de la ventana
 	
@@ -54,7 +59,13 @@ public class TresEnRaya extends Canvas {
 				if (e.getButton() == MouseEvent.BUTTON1) {
 					for (Cuadro cuadro : cuadros) {
 						if (cuadro.seHaHechoclicSobreCuadro(e.getX(), e.getY())) {
-							cuadro.clic();
+							cuadro.clic(turnoActual);
+							if (turnoActual == JUGADOR_1) {
+								turnoActual = JUGADOR_2;
+							}
+							else {
+								turnoActual = JUGADOR_1;
+							}
 						}
 					}
 				}
