@@ -2,99 +2,158 @@ package tresenraya;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+
 
 public class Cuadro {
-	// Coordenadas de este cuadro a representar sobre el canvas
-	private int xEnTablero, yEnTablero;
-	// Coordenadas del pixel superior izquierdo del cuadro representado por cada cuadro
-	private int esquinaSuperiorIzquierdaX, esquinaSuperiorIzquierdaY;
-	// Ancho y alto de este cuadro
-	private int ancho, alto;
-	//si se ha hecho clic sobre este cuadro
-	private int jugadorPropietario = 0;
-
-
-	public Cuadro(int xEnTablero, int yEnTablero) {
+	private int x, y; 
+	private int esquinaSupX, esquinaSupY;
+	private int ancho;
+	private int alto;
+	private int jugadorTurno = 0;
+	
+	public Cuadro(int x, int y) {
 		super();
-		this.xEnTablero = xEnTablero;
-		this.yEnTablero = yEnTablero;
-	}
 	
+		this.x = x;
+		this.y = y;
 
-	public void paint (Graphics g) {
-		//Obtengo el ancho y el alto de cada cuadro
+	}
+	
+	public void paint(Graphics g) {
+		// TODO Auto-generated method stub
+
 		ancho = TresEnRaya.getInstance().getWidth() / 3;
-		alto = TresEnRaya.getInstance().getHeight() / 3;
-		esquinaSuperiorIzquierdaX = this.xEnTablero * ancho;
-		esquinaSuperiorIzquierdaY = this.yEnTablero * alto;
+        alto = TresEnRaya.getInstance().getHeight() / 3;
 		
-		//Pinto el borde
+		esquinaSupX = this.x * ancho;
+		esquinaSupY = this.y * alto;
+		
 		g.setColor(Color.black);
-		g.drawRect(esquinaSuperiorIzquierdaX, esquinaSuperiorIzquierdaY, ancho, alto);
+		g.drawRect(esquinaSupX, esquinaSupY, ancho, alto);
 		
-		//Pinto imagenes vectoriales sobre este cuadro si se ha hecho clici sobre el
-		pintaImagenesVectoriales(g);
-		
-	
-	}
-	
-	private void pintaImagenesVectoriales (Graphics g) {
-		//Ahora dependiendo del jugador [propietario pinto algo diferernte
-		if (this.jugadorPropietario == TresEnRaya.JUGADOR_1) {
-			//PAra pintar una cruz pinto dos lineas que se cruzan
-			g.drawLine(this.esquinaSuperiorIzquierdaX, this.esquinaSuperiorIzquierdaY,
-					this.esquinaSuperiorIzquierdaX + this.ancho, this.esquinaSuperiorIzquierdaY + alto);
-			g.drawLine(this.esquinaSuperiorIzquierdaX, this.esquinaSuperiorIzquierdaY + alto,
-					this.esquinaSuperiorIzquierdaX + this.ancho, this.esquinaSuperiorIzquierdaY);
-		}
-		if(this.jugadorPropietario == TresEnRaya.JUGADOR_2) {
-			g.drawOval(this.esquinaSuperiorIzquierdaX, this.esquinaSuperiorIzquierdaY, this.ancho, this.alto);
-		}
+		//pintaImagenVectoriales(g);
+		pintaImagenesJuego(g);
 		
 	}
 	
-	public boolean seHaHechoclicSobreCuadro (int xClic, int yClic) {
-		if (xClic > this.esquinaSuperiorIzquierdaX && xClic < (esquinaSuperiorIzquierdaY + ancho) &&
-				yClic > this.esquinaSuperiorIzquierdaY && yClic < (esquinaSuperiorIzquierdaY + alto)) {
-			return true;
+	private void pintaImagenVectoriales(Graphics g) {
+		
+		if (this.jugadorTurno == TresEnRaya.JUGADOR_1) {
+			g.drawOval(this.esquinaSupX, this.esquinaSupY, this.ancho, this.alto);
 		}
-		return false;
+		
+		if(this.jugadorTurno == TresEnRaya.JUGADOR_2) {
+			g.drawLine(this.esquinaSupX, this.esquinaSupY, this.esquinaSupX + this.ancho, this.esquinaSupY + this.alto);
+			g.drawLine(this.esquinaSupX, this.esquinaSupY + this.alto, this.esquinaSupX + this.ancho, this.esquinaSupY);
+		}
 	}
 	
 	
-	public void clic (int jugador) {
-		if (this.jugadorPropietario == 0) {
-			this.jugadorPropietario = jugador;
-		}
+	private void pintaImagenesJuego(Graphics g) {
+        BufferedImage imagenAPintar = null;
+        if (this.jugadorTurno == TresEnRaya.JUGADOR_1) {
+            imagenAPintar = SpritesRepository.getInstance().getImagen("btc.png");
+        }
+        if (this.jugadorTurno == TresEnRaya.JUGADOR_2) {
+            imagenAPintar = SpritesRepository.getInstance().getImagen("cake.png");
+        }
+        if(imagenAPintar != null) {
+            int x = this.esquinaSupX + this.ancho / 2 - imagenAPintar.getWidth() / 2;
+            int y = this.esquinaSupY + this.alto / 2 - imagenAPintar.getHeight() / 2;
+            g.drawImage(imagenAPintar, x, y, null);
+        }
+    }
+
+	public boolean clickSobreCuadro(int xClick, int yClick) {
+		if (xClick > this.esquinaSupX && xClick < (esquinaSupX + ancho) 
+				&& yClick > this.esquinaSupY && yClick < (esquinaSupY + alto) ) {
 		
-		//Obligo a repintar el objeto Canvas
+		return true;
+	}
+	return false;
+}
+	
+	public void click (int jugador) {
+		if (this.jugadorTurno ==0) {
+			this.jugadorTurno = jugador;
+			
+			TresEnRaya.getInstance().getMatrizJugadas()[this.y][this.x] = jugador;
+		}
 		TresEnRaya.getInstance().repaint();
 		TresEnRaya.getInstance().revalidate();
+		
+		System.out.println("\nEstado del juego:\n");
+        for ( int i = 0; i < TresEnRaya.getInstance().getMatrizJugadas().length;i++) {
+            for (int j = 0; j < TresEnRaya.getInstance().getMatrizJugadas().length;j++) {
+                System.out.print(TresEnRaya.getInstance().getMatrizJugadas()[i][j] + "\t");
+            }
+            System.out.println();
+        }
+	}
+
+	public int getEsquinaSupX() {
+		return esquinaSupX;
+	}
+
+
+	public void setEsquinaSup(int esquinaSupX) {
+		this.esquinaSupX = esquinaSupX;
+	}
+
+
+	public int getEsquinaSupY() {
+		return esquinaSupY;
+	}
+
+
+	public void setEsquinaSupY(int esquinaSupY) {
+		this.esquinaSupY = esquinaSupY;
 	}
 	
+	public int getX() {
+		return x;
+	}
+
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+
+	public int getY() {
+		return y;
+	}
+
+
+	public void setY(int y) {
+		this.y = y;
+	}
+
+
+	public int getAncho() {
+		return ancho;
+	}
+
+
+	public void setAncho(int ancho) {
+		this.ancho = ancho;
+	}
+
+
+	public int getAlto() {
+		return alto;
+	}
+
+
+	public void setAlto(int alto) {
+		this.alto = alto;
+	}
+
 	@Override
 	public String toString() {
-		return "Cuadro [xEnTablero=" + xEnTablero + ", yEnTablero=" + yEnTablero + "]";
+		return "Cuadro [x=" + x + ", y=" + y + "]";
 	}
-
-	public int getxEnTablero() {
-		return xEnTablero;
-	}
-
-	public void setxEnTablero(int xEnTablero) {
-		this.xEnTablero = xEnTablero;
-	}
-
-	public int getyEnTablero() {
-		return yEnTablero;
-	}
-
-	public void setyEnTablero(int yEnTablero) {
-		this.yEnTablero = yEnTablero;
-	}
-	
-	
-
 	
 
 }

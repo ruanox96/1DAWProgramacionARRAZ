@@ -27,7 +27,7 @@ public class SpritesRepository {
 	// Instancia Singleton
 	private static SpritesRepository instance = null;
 
-	private static String RESOURCES_FOLDER = "../tresenraya/resources/";
+	private static String RESOURCES_FOLDER = "../TresEnRaya/resources/";
 
 	/**
 	 * Getter Singleton
