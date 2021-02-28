@@ -21,7 +21,7 @@ public class Palabras {
 
 	private static String pideFrase() throws PalabrasMinimas, Ofensiva,  PalabraBombilla, EspaciosBlancos {
 		String str = JOptionPane.showInputDialog(
-				"Introduce una frase con la palabra bombilla, con 3 palabras y con una palabra ofensiva");
+				"Introduce 3 palabras que contengan la palabra bombilla y sin palabras ofensivas como tonto");
 
 		String[] palabras = str.split(" ");
 		for (int i = 0; i < palabras.length; i++) {
