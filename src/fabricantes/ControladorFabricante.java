@@ -5,24 +5,30 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-
 public class ControladorFabricante {
-	
+
 	private static ControladorFabricante instance = null;
-	public Connection conexion = null;
+	public Connection conn = null;
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public static ControladorFabricante getInstance () {
 		if (instance == null) {
 			instance = new ControladorFabricante();
 		}
 		return instance;
 	}
-
-public ControladorFabricante() {
+	
+	/**
+	 * 
+	 */
+	public ControladorFabricante() {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/tutorialjavacoches?serverTimezone=UTC","java", "1234");
+			conn = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/tutorialjavacoches?serverTimezone=UTC","java", "1234");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -38,7 +44,7 @@ public ControladorFabricante() {
 	public Fabricante findPrimero () {
 		Fabricante f = null;
 		try {
-			Statement s = this.conexion.createStatement();
+			Statement s = this.conn.createStatement();
 			ResultSet rs =  s.executeQuery("select * from tutorialjavacoches.fabricante order by id limit 1");
 			if (rs.next()) {
 				f = new Fabricante();
@@ -61,7 +67,7 @@ public ControladorFabricante() {
 	public Fabricante findUltimo () {
 		Fabricante f = null;
 		try {
-			Statement s = this.conexion.createStatement();
+			Statement s = this.conn.createStatement();
 			ResultSet rs =  s.executeQuery("select * from tutorialjavacoches.fabricante order by id desc limit 1");
 			if (rs.next()) {
 				f = new Fabricante();
@@ -83,7 +89,7 @@ public ControladorFabricante() {
 	public Fabricante findSiguiente (int idActual) {
 		Fabricante f = null;
 		try {
-			Statement s = this.conexion.createStatement();
+			Statement s = this.conn.createStatement();
 			ResultSet rs =  s.executeQuery("select * from tutorialjavacoches.fabricante where id > " + idActual + " order by id limit 1");
 			if (rs.next()) {
 				f = new Fabricante();
@@ -107,7 +113,7 @@ public ControladorFabricante() {
 	public Fabricante findAnterior (int idActual) {
 		Fabricante f = null;
 		try {
-			Statement s = this.conexion.createStatement();
+			Statement s = this.conn.createStatement();
 			ResultSet rs =  s.executeQuery("select * from tutorialjavacoches.fabricante where id < " + idActual + " order by id desc limit 1");
 			if (rs.next()) {
 				f = new Fabricante();
